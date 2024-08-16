@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Car from "./Car";
 
 function App() {
+  const cars=[
+    {id : 1,brand:"bmw",},
+    {id : 2,brand:"ford",},
+    {id : 3,brand:"audi",},
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     { cars.map((car)=>{
+       <Car brand={car.brand} key={car.id} />
+
+      })}
+      
     </div>
   );
 }
+  // document.createElement("div",null,"hallo hend")
+
 
 export default App;
